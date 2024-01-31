@@ -1,30 +1,52 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <div>Bot昵称：{{bot_name}}</div>
+    <div>Bot战力：{{ bot_rating }}</div>
+  </div>
+  <router-view></router-view>
 </template>
 
+
+<script>
+import $ from 'jquery';
+import { ref } from 'vue';
+
+
+
+export default {
+  name: "App",
+  setup: () => {
+
+    $.ajax({
+      url: "http://127.0.0.1:3000/pk/getbotinfo/",
+      type: "get",
+      success: resp => {
+        // console.log(resp)
+        bot_name.value = resp.name; 
+        bot_rating.value = resp.rating;
+      }
+    })
+    let bot_name = ref("");
+    let bot_rating = ref("");
+    return {
+      bot_name,
+      bot_rating
+    }
+  }
+}
+</script>
+
+
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+body{
+  margin:0px;
+  background: url("@/assets/background.jpg") no-repeat;
+  background-size:100% 100%;
+  background-attachment:fixed;
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  /* background-image: url("@/assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
 }
 </style>
