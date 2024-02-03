@@ -6,16 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping("/pk/")
 @Api(tags = "PK_API")
 public class IndexController {
 
-    @RequestMapping("index")
+    @RequestMapping("/")
     public String index() {
         return "pk/index.html";
     }
 
-    @RequestMapping("test")
+    @RequestMapping("/test")
     @ResponseBody
     public String test() {
         return "test test test";
