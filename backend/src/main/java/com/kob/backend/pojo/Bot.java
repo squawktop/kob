@@ -14,14 +14,14 @@ import java.util.Date;
 @AllArgsConstructor
 public class Bot {
     @TableId(type = IdType.AUTO)
-    private Integer id ;
-    private Integer userId ;    //数据库为 user_id , pojo 为 userId (驼峰命名法) ,在queryWrapper中的名称仍然为 user_id
-    private String title ;
-    private String description ;
-    private String content ;
-    private Integer rating ;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date createtime ;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date modifytime ;
+    private Integer id;
+    private Integer userId;    //数据库为 user_id , pojo 为 userId (驼峰命名法) ,在queryWrapper中的名称仍然为 user_id
+    private String title;
+    private String description;
+    private String content;
+    private Integer rating;                      //timezone = "Asia/shanghai")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date createtime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date modifytime;
 }

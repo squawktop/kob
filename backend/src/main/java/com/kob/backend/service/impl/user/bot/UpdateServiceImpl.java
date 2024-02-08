@@ -32,6 +32,7 @@ public class UpdateServiceImpl implements UpdateService {
         String description = data.get("description");
         String content = data.get("content");
 
+
         Map<String, String> map = new HashMap<>();
         if (title == null || title.length() == 0) {
             map.put("error_message", "标题不能为空");
@@ -43,7 +44,7 @@ public class UpdateServiceImpl implements UpdateService {
             return map;
         }
 
-        if (description != null || description.length() == 0) {
+        if (description == null || description.length() == 0) {
             description = "这个用户很懒，什么也没留下~";
         }
         if (description.length() > 300) {
