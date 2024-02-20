@@ -38,7 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/user/account/token/", "/user/account/register/").permitAll() //这两个链接是公开的，可以被访问的
+                .antMatchers("/user/account/token/", "/user/account/register/",//这两个链接是公开的，可以被访问的
+                        "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/webjars/**")//这些链接是公开的，可以被访问的，swagger-ui
+                .permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated();
 

@@ -16,13 +16,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 @Configuration
 public class SwaggerConfiguration {
     /**
-     *@ClassName SwaggerConfiguration
-     *@Description TODO
-     *@Author rainbow
-     *@Date 2024/1/26 20:26
-     **/
-
-    /**
      * 创建Docket类型的对象。并使用spring容器管理。
      * Docket是Swagger中的全局配置对象
      *
