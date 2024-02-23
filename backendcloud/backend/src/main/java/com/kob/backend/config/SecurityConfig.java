@@ -41,7 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/account/token/", "/user/account/register/",//这两个链接是公开的，可以被访问的
                         "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/webjars/**")//这些链接是公开的，可以被访问的，swagger-ui
                 .permitAll()
-                .antMatchers("/pk/start/game/").hasIpAddress("127.0.0.1")
+                .antMatchers("/pk/start/game/","/pk/receive/bot/move/").hasIpAddress("127.0.0.1")
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated();
 
