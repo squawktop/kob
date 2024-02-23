@@ -25,7 +25,7 @@ public class Bot implements com.kob.botrunningsystem.utils.BotInterface {
         int[] dx = {-1, 0, 1, 0}, dy = {0, 1, 0, -1};
         int x = sx, y = sy;
         int step = 0;
-        res.add(new Cell(x, y)); 
+        res.add(new Cell(x, y));
         for (int i = 0; i < steps.length(); i++) {
             int d = steps.charAt(i) - '0';
             x += dx[d];
