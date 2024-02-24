@@ -14,7 +14,7 @@ public class LoginController {
     private LoginService loginService;
 
     //登录操作 ， 一般是post请求 ， post是看不到明文的，get是在url呈现
-    @PostMapping("/user/account/token/")            //这里定义完之后要去放行，公开化
+    @PostMapping("/api/user/account/token/")            //这里定义完之后要去放行，公开化
     public Map<String, String> getToken(@RequestParam Map<String, String> map) {
         String username = map.get("username");
         String password = map.get("password");

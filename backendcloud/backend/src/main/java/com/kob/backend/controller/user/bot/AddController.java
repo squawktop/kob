@@ -14,7 +14,7 @@ public class AddController {
     @Autowired
     private AddService addService ;
 
-    @PostMapping("/user/bot/add/") //添加操作是需要修改数据库的，推荐使用post
+    @PostMapping("/api/user/bot/add/") //添加操作是需要修改数据库的，推荐使用post
     public Map<String , String> add(@RequestParam Map<String , String> data){
         return addService.add(data);
     }

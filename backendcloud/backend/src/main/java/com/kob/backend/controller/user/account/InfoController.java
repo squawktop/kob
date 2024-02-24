@@ -13,7 +13,7 @@ public class InfoController {
     @Autowired
     private InfoService infoService ;
 
-    @GetMapping("/user/account/info/")//得到信息， 获取信息一般是Get
+    @GetMapping("/api/user/account/info/")//得到信息， 获取信息一般是Get
     public Map<String , String> getinfo(){
         return infoService.getinfo();
     }
