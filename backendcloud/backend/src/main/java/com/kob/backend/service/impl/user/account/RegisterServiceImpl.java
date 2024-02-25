@@ -64,7 +64,7 @@ public class RegisterServiceImpl implements RegisterService {
         //都成功之后，将数据加密后存入数据库里面
         String encodedPassword = passwordEncoder.encode(password);
         String photo = "https://git.acwing.com/uploads/-/system/user/avatar/11937/avatar.png?width=90";
-        User user = new User(null, username, encodedPassword, photo,1500);
+        User user = new User(null, username, encodedPassword, photo,1500,null);
         userMapper.insert(user);
 
         map.put("error_message", "success");

@@ -38,7 +38,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/user/account/token/", "/api/user/account/register/",//这两个链接是公开的，可以被访问的
+                .antMatchers("/api/user/account/token/",
+                        "/api/user/account/register/",//这两个链接是公开的，可以被访问的
+                        "/api/user/account/acwing/acapp/apply_code/" ,
+                        "/api/user/account/acwing/acapp/receive_code/" ,
+                        "/api/user/account/acwing/web/apply_code/" ,
+                        "/api/user/account/acwing/web/receive_code/" ,
+
                         "/swagger-ui.html", "/swagger-resources/**", "/v2/api-docs", "/webjars/**")//这些链接是公开的，可以被访问的，swagger-ui
                 .permitAll()
                 .antMatchers("/pk/start/game/","/pk/receive/bot/move/").hasIpAddress("127.0.0.1")
